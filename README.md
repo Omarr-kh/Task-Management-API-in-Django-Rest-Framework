@@ -13,7 +13,8 @@
             "id": 1,
             "title": "Task 1",
             "description": "Description of Task 1",
-            "completed": false
+            "completed": false,
+            "user": 1
         },
         ...
     ]
@@ -33,7 +34,8 @@
         "id": 1,
         "title": "Task 1",
         "description": "Description of Task 1",
-        "completed": false
+        "completed": false,
+        "user": 1
     }
     ```
     
@@ -47,7 +49,8 @@
     {
         "title": "New Task",
         "description": "Details of the new task",
-        "completed": false
+        "completed": false,
+        "user": 1
     }
     ```
 - **Response:**
@@ -58,7 +61,8 @@
         "id": 1,
         "title": "New Task",
         "description": "Details of the new task",
-        "completed": false
+        "completed": false,
+        "user": 1
     }
     ```
 
@@ -83,7 +87,8 @@
         "id": 1,
         "title": "Updated Task",
         "description": "Description of Task 1",
-        "completed": false
+        "completed": false,
+        "user": 1
     }
     ```
   - **Error Response:**
