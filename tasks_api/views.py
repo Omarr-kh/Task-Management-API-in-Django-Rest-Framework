@@ -31,3 +31,21 @@ def create_task(request):
         serializer.save()
 
     return Response(serializer.data)
+
+
+@api_view(["POST"])
+def update_task(request, pk):
+    try:
+        task = Task.objects.get(id=pk)
+    except Task.DoesNotExist:
+        return Response({"error": "Task not found"}, status=404)
+
+    serializer = TaskSerializer(
+        instance=task, data=request.data, partial=True
+    )  # partial=True allows partial updates
+
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
+    else:
+        return Response(serializer.errors, status=400)
