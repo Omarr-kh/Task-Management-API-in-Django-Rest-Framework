@@ -16,6 +16,13 @@ def tasks_list(request):
     return Response(serializer.data)
 
 
+@api_view(["GET"])
+def view_task(request, pk):
+    task = Task.objects.get(id=pk)
+    serializer = TaskSerializer(task, many=False)
+    return Response(serializer.data)
+
+
 @api_view(["POST"])
 def create_task(request):
     serializer = TaskSerializer(data=request.data)
